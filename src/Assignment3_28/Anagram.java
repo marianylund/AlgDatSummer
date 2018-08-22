@@ -40,12 +40,8 @@ public class Anagram {
 		char[] as = a.toCharArray();
 		char[] bs = b.toCharArray();
 		
-		for(int i = 0; i<l.length;i++) {
-			for(int j = i+1; j<l.length;j++) {
-				if(l[i]==l[j]) {
-					return true;
-				}
-			}
+		for(int i = 0; i<as.length;i++) {
+			
 		}
 		
 		
