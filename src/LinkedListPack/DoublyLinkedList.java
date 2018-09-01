@@ -8,6 +8,10 @@ public class DoublyLinkedList {
 		return head;
 	}
 	
+	public void setHead(DLNode head) {
+		this.head = head;
+	}
+	
 	public int getLength() {
 		DLNode current = this.head;
 		int length = 0;
