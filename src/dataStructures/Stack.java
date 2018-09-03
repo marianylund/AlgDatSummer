@@ -31,8 +31,10 @@ public class Stack {
 		if(this.isEmpty()) {
 			throw new IllegalStateException("The stack is empty");
 		}
+		int data = stackArray[top];
+		stackArray[top] = 0;
 		top --;
-		return stackArray[top + 1];
+		return data;
 	}
 	
 	public boolean isFull() {
@@ -47,6 +49,15 @@ public class Stack {
 			return true;
 		}
 		return false;
+	}
+	
+	public String toString() {
+		String s = "[";
+		for(int i = 0; i < stackArray.length-1; i++) {
+			s += stackArray[i] + ", ";
+		}
+		s += stackArray[stackArray.length-1] + "]";
+		return s + " top: " + top;
 	}
 	
 	public static void main(String[] args) {

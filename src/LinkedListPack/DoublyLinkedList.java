@@ -1,4 +1,4 @@
-package LinkedListPack;
+package linkedListPack;
 
 public class DoublyLinkedList {
 
@@ -30,6 +30,7 @@ public class DoublyLinkedList {
 		}
 		this.head = newNode;
 	}
+	
 	
 	@Override
 	public String toString() {
