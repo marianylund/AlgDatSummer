@@ -17,12 +17,14 @@ public class SortingManager {
 		alg.add(ss);
 		SortingAlgorithm is = new InsertionSort();
 		alg.add(is);
+		SortingAlgorithm ms = new MergeSort();
+		alg.add(ms);
 		
 	}
 	
 	public static void main(String[] args) {
 		
-		SortingManager sm = new SortingManager(10);
+		SortingManager sm = new SortingManager(100);
 		String[] winner = {null, null};
 		
 		System.out.println("Input: " + Arrays.toString(sm.input));

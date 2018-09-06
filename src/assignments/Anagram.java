@@ -1,4 +1,4 @@
-package Assignment3_28;
+package assignments;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;

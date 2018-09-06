@@ -2,32 +2,25 @@ package dataStructures;
 
 public class TowerOfHanoi {
 	
-	Stack A;
-	Stack B;
-	Stack C;
+	int i = 0;
 	
-	public TowerOfHanoi(int disks) {
-		A = new Stack(disks);
-		B = new Stack(disks);
-		C = new Stack(disks);
-		for(int i = 1; i<=disks;i++) {
-			A.push(i);
-		}
-		System.out.println("Tower of Hanoi initiated: " + A);
-	}
+	// Talk to someone about it maybe :3
 	
-	public void move(int disks, Stack from, Stack to, Stack using) {
+
+	public void move(int disks, char from, char to, char using) {
 		if(disks == 1) {
-			to.push(from.pop());
-			System.out.println("Moving " + disks + "disks from " + from + " to " + to);
+			i ++;
+			System.out.println(i + " Moving one disc" + from + " to " + to);
 		} else {
-			this.move(disks - 1, from, using, to);
+			move(disks - 1, from, using, to);
+			//System.out.println("Moving " + disks + " disks from " + from + " to " + to);
+			move(disks - 1, using, to, from);
 		}
 	}
 	
 	public static void main(String[] args) {
-		TowerOfHanoi t = new TowerOfHanoi(3);
-		t.move(3, t.A, t.C, t.B);
+		TowerOfHanoi t = new TowerOfHanoi();
+		t.move(10, 'A', 'C', 'B');
 		
 	}
 
