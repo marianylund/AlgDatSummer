@@ -10,7 +10,11 @@ public class SortingManager {
 	
 	public SortingManager(int length) {
 		
-		input = new Random().ints(length, 0, 100).toArray();
+		input = new Random().ints(length, 0, 10).toArray();
+		SortingAlgorithm shells = new ShellSort();
+		alg.add(shells);
+		/*SortingAlgorithm qs = new QuickSort();
+		alg.add(qs);
 		SortingAlgorithm bs = new BubbleSort();
 		alg.add(bs);
 		SortingAlgorithm ss = new SelectionSort();
@@ -19,12 +23,12 @@ public class SortingManager {
 		alg.add(is);
 		SortingAlgorithm ms = new MergeSort();
 		alg.add(ms);
-		
+		*/
 	}
 	
 	public static void main(String[] args) {
 		
-		SortingManager sm = new SortingManager(100);
+		SortingManager sm = new SortingManager(10);
 		String[] winner = {null, null};
 		
 		System.out.println("Input: " + Arrays.toString(sm.input));
