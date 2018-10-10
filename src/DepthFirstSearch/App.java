@@ -1,5 +1,8 @@
 package DepthFirstSearch;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
 	
 	public static void main(String[] args) {
@@ -16,7 +19,10 @@ public class App {
 		v2.addNeighbourVertex(v3);v2.addNeighbourVertex(v4);
 		v3.addNeighbourVertex(v5);
 		
-		dfs.dfs(v1);
+		List<Vertex> l = new ArrayList<>();
+		l.add(v2);l.add(v5);l.add(v4);l.add(v3);l.add(v1);
+		
+		dfs.dfs(l);
 	}
 
 }
