@@ -7,6 +7,9 @@ public class Vertex {
 	
 	private String name;
 	private boolean visited;
+	private boolean beingVisited;
+	
+
 	private List<Vertex> neighbours;
 	
 	public Vertex(String name) {
@@ -23,6 +26,13 @@ public class Vertex {
 		this.name = name;
 	}
 
+	public boolean isBeingVisited() {
+		return beingVisited;
+	}
+
+	public void setBeingVisited(boolean beingVisited) {
+		this.beingVisited = beingVisited;
+	}
 	public boolean isVisited() {
 		return visited;
 	}
