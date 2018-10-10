@@ -33,13 +33,13 @@ public class Heap {
 			System.out.println("Largest is right: " + largestIndex);
 		}
 		if(largestIndex != index) {
-			System.out.println("Largest is not the same as index " + largestIndex + " and " + index);
+			System.out.println("Largest is not the same as index " + largestIndex + ":" + heapList[largestIndex] + " and " + index + ":" + heapList[index]);
 			// swap heapList[index] and heapList[largestIndex]
 			int temp = heapList[index];
 			heapList[index] = heapList[largestIndex];
 			heapList[largestIndex] = temp;
 			
-			maxHeapify(heapList, largestIndex);
+			
 		}
 	}
 	
