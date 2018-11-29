@@ -60,7 +60,7 @@ public class Heap {
 	}
 	
 	public static void main(String[] args) {
-		int[] list = Heap.buildMaxHeap(new int[]{7, 0, 5, 6, 8, 3, 4});
+		int[] list = Heap.buildMaxHeap(new int[]{7, 0, 5, 6, 8, 3, 4, 2, 1});
 		System.out.println(Arrays.toString(list));
 	}
 	
