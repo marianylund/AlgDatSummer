@@ -43,7 +43,7 @@ public static void main(String[] args) {
 		edgeList.add(new Edge(vertexList.get(4), vertexList.get(3), -1*Math.log(1.049)));
 		
 		BellmanFord bellmannFordAlgorithm = new BellmanFord(vertexList,edgeList);
-		//bellmannFordAlgorithm.bellmanFord(vertexList.get(0));
+		bellmannFordAlgorithm.bellmanFord(vertexList.get(0));
 		
 		//bellmannFordAlgorithm.printCycle();
 		

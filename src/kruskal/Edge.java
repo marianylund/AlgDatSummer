@@ -1,12 +1,12 @@
-package ArbitrageDetection;
+package kruskal;
 
 public class Edge implements Comparable<Edge>{
 
 	private Vertex from;
 	private Vertex to;
-	private double weight;
+	private int weight;
 	
-	public Edge(Vertex from, Vertex to, double weight) {
+	public Edge(Vertex from, Vertex to, int weight) {
 		this.from = from;
 		this.to = to;
 		this.weight = weight;
@@ -24,18 +24,21 @@ public class Edge implements Comparable<Edge>{
 	public void setTo(Vertex to) {
 		this.to = to;
 	}
-	public double getWeight() {
+	public int getWeight() {
 		return weight;
 	}
-	public void setWeight(double weight) {
+	public void setWeight(int weight) {
 		this.weight = weight;
 	}
 
 	@Override
 	public int compareTo(Edge o) {
-		return Double.compare(this.getWeight(), o.getWeight());
+		return Integer.compare(this.getWeight(), o.getWeight());
 	}
 	
-	
+	@Override
+	public String toString() {
+		return from.getName() + " - " + weight + " - " + to.getName();
+	}
 	
 }
