@@ -22,12 +22,12 @@ public class FordFulk {
 	protected void getMaxFlowAndMatching() {
 		List<Integer> augmentedFlow = getAugmentedFlow();
 		int maxFlow = 0;
+		
 		while(augmentedFlow.contains(sink)) {
 			System.out.println(names[augmentedFlow.get(2)] + " hires " + names[augmentedFlow.get(1)]);
 			
 			for(int i = 0; i < augmentedFlow.size() - 1; i++) {
 				capacities[augmentedFlow.get(i)][augmentedFlow.get(i+1)] = 0;
-				//System.out.println(names[augmentedFlow.get(i)] + " goes to " + names[augmentedFlow.get(i+1)]);
 			}
 			maxFlow ++;
 			augmentedFlow = getAugmentedFlow();
@@ -38,26 +38,22 @@ public class FordFulk {
 	private List<Integer> getAugmentedFlow() {
 		
 		List<Integer> augmentedFlow = new ArrayList<>();
-		Queue<Integer> queue = new LinkedList<>();
 		
-		int current = -1;
-		queue.add(0); augmentedFlow.add(0);
+		int current = 0;
+		augmentedFlow.add(0);
 		
-		while(!queue.isEmpty()) {
-			current = queue.poll();
-			//System.out.println("Checking out " + names[current]);
+		for(int i = current; i <= sink; i++) {
 			if(current == sink) { // found the sink => found the augmented flow
 				return augmentedFlow;
 			}
-			
-			for(int i = current; i <= sink; i++) {
-				if(capacities[current][i] > 0 && !augmentedFlow.contains(i)) { // there is a way!
-					//System.out.println("Capacity between " + names[current] + " and " + names[i] + " is " + capacities[current][i]);
-					augmentedFlow.add(i);
-					current = i;
-				}
+		
+			if(capacities[current][i] > 0 && !augmentedFlow.contains(i)) { // there is a way!
+				//System.out.println("Capacity between " + names[current] + " and " + names[i] + " is " + capacities[current][i]);
+				augmentedFlow.add(i);
+				current = i;
 			}
 		}
+		
 		return augmentedFlow; // TODO is that the minimal cut then?
 	}
 }
